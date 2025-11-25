@@ -1,0 +1,346 @@
+/* Background with dimmed photo */
+.mood-diary {
+  min-height: 100vh;
+  background: 
+    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+    url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1400&q=80') no-repeat center center/cover;
+  padding: 2rem 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #e0e0e0;
+}
+
+/* Glassmorphism Container */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  padding: 2rem;
+  overflow: hidden;
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #f0f0f0;
+}
+
+/* Entry cards with enhanced glassmorphism */
+.entry-card {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-left: 5px solid var(--entry-color);
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.entry-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+}
+
+.entry-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.entry-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.8rem;
+}
+
+.entry-mood {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.entry-emoji {
+  font-size: 2rem;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.entry-mood-name {
+  font-weight: 700;
+  color: #f0f0f0;
+  font-size: 1.1rem;
+}
+
+.delete-button {
+  background: rgba(255, 77, 77, 0.2);
+  border: 1px solid rgba(255, 77, 77, 0.3);
+  color: #ff4d4d;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0.4rem 0.6rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  opacity: 0;
+  backdrop-filter: blur(10px);
+}
+
+.entry-card:hover .delete-button {
+  opacity: 1;
+}
+
+.delete-button:hover {
+  background: rgba(255, 77, 77, 0.4);
+  box-shadow: 0 0 10px rgba(255, 77, 77, 0.5);
+  transform: scale(1.1);
+}
+
+.entry-datetime {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 0.5rem;
+  font-style: italic;
+}
+
+.entry-note {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 1rem;
+  border-radius: 12px;
+  color: #e8e8e8;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.1);
+}
+
+/* Mood buttons with translucent background */
+.mood-button {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-md);
+  border: 2px solid transparent;
+  color: #ddd;
+  transition: var(--transition);
+}
+
+.mood-button:hover {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+  border-color: var(--primary-color);
+}
+
+.mood-button.selected {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: var(--primary-color);
+  box-shadow: 0 0 10px var(--primary-color);
+  color: var(--primary-color);
+  transform: scale(1.05);
+}
+
+/* Note section with glass effect */
+.note-section {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  border-radius: var(--radius-md);
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  color: #ddd;
+}
+
+/* Save button with bright color */
+.save-button {
+  background: var(--primary-color);
+  color: white;
+  font-weight: 700;
+}
+
+.save-button:hover {
+  background: #4b3cb6;
+  box-shadow: 0 0 15px var(--primary-color);
+}
+
+/* Headers with light colors */
+.title {
+  color: #dcd6f7;
+}
+
+.subtitle,
+.history-title {
+  color: #bbb;
+}
+
+/* Entry mood name */
+.entry-mood-name {
+  color: #e0e0e0;
+}
+
+/* Scrollbar for notes input and entries list for better UX */
+.note-input,
+.entries-list {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+}
+
+.note-input::-webkit-scrollbar,
+.entries-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.note-input::-webkit-scrollbar-thumb,
+.entries-list::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+}
+/* Save button with gradient and glow */
+.save-button {
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(108, 92, 231, 0.6);
+  transition: all 0.3s ease;
+  user-select: none;
+  text-align: center;
+}
+
+.save-button:hover {
+  background: linear-gradient(135deg, #7e6af7, #bfbcff);
+  box-shadow: 0 6px 20px rgba(126, 106, 247, 0.9);
+  transform: scale(1.05);
+}
+
+/* Mood Selector - Centered and Beautiful */
+.mood-selector {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.moods-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1.5rem;
+  max-width: 600px;
+  justify-items: center;
+  align-items: center;
+}
+
+/* Mood buttons with enhanced beauty */
+.mood-button {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+  border-radius: 50%;
+  border: 3px solid transparent;
+  color: #ddd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 120px;
+  padding: 0.8rem;
+  box-shadow: inset 0 4px 8px rgba(255, 255, 255, 0.2), 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.mood-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s;
+}
+
+.mood-button:hover::before {
+  transform: translateX(100%);
+}
+
+.mood-button:hover {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.2));
+  box-shadow: inset 0 6px 12px rgba(255, 255, 255, 0.3), 0 8px 25px rgba(0, 0, 0, 0.2), 0 0 20px rgba(108, 92, 231, 0.3);
+  border-color: rgba(108, 92, 231, 0.5);
+  transform: translateY(-8px) scale(1.08);
+}
+
+.mood-button.selected {
+  background: linear-gradient(135deg, rgba(108, 92, 231, 0.4), rgba(162, 155, 254, 0.3));
+  border-color: var(--primary-color);
+  box-shadow: 0 0 25px var(--primary-color), inset 0 6px 12px rgba(255, 255, 255, 0.3);
+  color: #fff;
+  transform: scale(1.15);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 25px var(--primary-color); }
+  50% { box-shadow: 0 0 35px var(--primary-color), 0 0 45px var(--primary-color); }
+  100% { box-shadow: 0 0 25px var(--primary-color); }
+}
+
+/* Mood emoji and name styling */
+.mood-emoji {
+  font-size: 3.5rem;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+  margin-bottom: 0.5rem;
+}
+
+.mood-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: inherit;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.mood-button.selected .mood-name {
+  color: #fff;
+}
+
+/* Note input with enhanced glass effect */
+.note-input {
+  width: 100%;
+  max-width: 100%;
+  padding: 1.2rem 1rem;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(15px);
+  border-radius: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  font-size: 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #eee;
+  resize: vertical;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 2px 8px rgba(255, 255, 255, 0.15), 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+}
+
+.note-input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+  font-style: italic;
+}
+
+.note-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  background: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 0 15px var(--primary-color), inset 0 2px 8px rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px);
+}
