@@ -229,7 +229,7 @@ serve -s build
 
 🎉 **Попробуйте приложение прямо сейчас!**
 
-[![Демо](https://img.shields.io/badge/🚀%20Запустить%20демо-4CAF50?style=for-the-badge&logo=react&logoColor=white)](https://maxim007mv.github.io/tip-kt4/)
+[![Демо](https://img.shields.io/badge/🚀%20Запустить%20демо-4CAF50?style=for-the-badge&logo=react&logoColor=white)](https://cocos27-kataifi-c752b7.netlify.app/)
 
 *Примечание: Для работы демо требуется современный браузер с поддержкой CSS backdrop-filter*
 
